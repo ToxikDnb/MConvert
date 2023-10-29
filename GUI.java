@@ -24,7 +24,7 @@ public class GUI {
         return Double.parseDouble(text.isBlank() ? "0" : text);
     }
     public void SetPounds(double p){
-        gbp.setText(String.valueOf((double)Math.round(p*100)/100));
+        gbp.setText("£" + String.valueOf((double)Math.round(p*100)/100));
     }
     private JTextField mad;
     public double GetDirham(){
@@ -32,7 +32,7 @@ public class GUI {
         return Double.parseDouble(text.isBlank() ? "0" : text);
     }
     public void setDirham(double d){
-        mad.setText(String.valueOf((double)Math.round(d*100)/100));
+        mad.setText(String.valueOf((double)Math.round(d*100)/100) + " MAD");
     }
 
     private JButton convertButton;
