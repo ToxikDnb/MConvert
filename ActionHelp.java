@@ -13,11 +13,22 @@ public class ActionHelp implements ActionListener{
     private GUI gui;
     private Backend backend;
 
+    /**
+     * The constructor for the action helper
+     * 
+     * @param gui the working GUI of the program
+     * @param backend the working Backend of the program
+     */
     public ActionHelp(GUI gui, Backend backend){
         this.backend = backend;
         this.gui = gui;
     }
 
+    /**
+     * This is the standard Actionlistener function required for button pressing
+     * 
+     * @param e the action event 
+     */
     @Override
     public void actionPerformed(ActionEvent e){
         ArrayList<Double> contents = gui.GetContents();
