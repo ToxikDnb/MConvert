@@ -1,5 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 
 /**
@@ -19,9 +20,15 @@ public class ActionHelp implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e){
-        double dirhams = gui.GetDirham();
-        double pounds = gui.GetPounds();
-        if(dirhams == 0) gui.setDirham(backend.GetDirham(pounds));
-        else if(pounds == 0) gui.SetPounds(backend.GetPounds(dirhams));
+        ArrayList<Double> contents = gui.GetContents();
+        Double selected = null;
+        for (int i = 0; i < contents.size(); i++) {
+            if(contents.get(i) != 0){
+                selected = backend.getCurrencyAtIndex(i).getValueToDollars(contents.get(i));
+            }
+        }
+        if(selected != null){
+            gui.SetContents(backend.getValues(selected));
+        }
     }
 }
