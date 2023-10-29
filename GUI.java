@@ -18,8 +18,10 @@ public class GUI {
     private JFrame frame;
     private JPanel mainPanel;
     private JPanel topPanel;
+    private JPanel bottomPanel;
 
     private JButton convertButton;
+    private JButton clearButton;
 
     private ArrayList<JCurrencyField> currencyFields;
 
@@ -37,6 +39,12 @@ public class GUI {
         }
     }
 
+    public void ResetContents(){
+        for (JCurrencyField field : currencyFields) {
+            field.ResetTitle();
+        }
+    }
+
     private Font textFont;
 
     public GUI(int width, int height, Backend backend) {
@@ -50,10 +58,18 @@ public class GUI {
 
         mainPanel = new JPanel(new GridLayout(2, 1));
         topPanel = new JPanel(new GridLayout(2, 2));
+        bottomPanel = new JPanel(new GridLayout(1, 2));
 
         convertButton = new JButton("Convert");
         convertButton.setFont(textFont);
         convertButton.addActionListener(new ActionHelp(this, backend));
+
+        clearButton = new JButton("Clear");
+        clearButton.setFont(textFont);
+        clearButton.addActionListener(new ClearHelp(this));
+
+        bottomPanel.add(convertButton);
+        bottomPanel.add(clearButton);
 
         currencyFields = new ArrayList<JCurrencyField>();
         for (int i = 0; i < backend.getCurrencySize(); i++) {
@@ -65,9 +81,9 @@ public class GUI {
             topPanel.add(c);
         }
         mainPanel.add(topPanel);
-        mainPanel.add(convertButton);
-        frame.add(mainPanel);
+        mainPanel.add(bottomPanel);
 
+        frame.add(mainPanel);
         frame.setVisible(true);
     }
 }

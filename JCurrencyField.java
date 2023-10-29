@@ -13,6 +13,10 @@ public class JCurrencyField extends JTextField{
         setText(currency.getTitle());
     }
 
+    public void ResetTitle(){
+        setText(currency.getTitle());
+    }
+
     public double Get(){
         String text = this.getText().replaceAll("[a-zA-Z]", "");
         return Double.parseDouble(text.isBlank() ? "0" : text);
