@@ -26,8 +26,6 @@ public class GUI {
 
     private ArrayList<JCurrencyField> currencyFields;
 
-    private int fieldMarginHorizontal = 20;
-    private int fieldMarginVertical = 10;
     private int fieldRows = 2;
     private int fieldCols = 2;
 
@@ -98,7 +96,6 @@ public class GUI {
         currencyFields = new ArrayList<JCurrencyField>();
         for (int i = 0; i < backend.getCurrencySize(); i++) {
             JCurrencyField c = new JCurrencyField(backend.getCurrencyAtIndex(i));
-            c.setMargin(new Insets(fieldMarginVertical, fieldMarginHorizontal, fieldMarginVertical, fieldMarginHorizontal));
             c.setHorizontalAlignment(SwingConstants.CENTER);
             c.setFont(textFont);
             currencyFields.add(c);
