@@ -6,9 +6,7 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Insets;
-import java.awt.Rectangle;
 import java.util.ArrayList;
-import java.awt.Dimension;
 
 /**
  * GUI

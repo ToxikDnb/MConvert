@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"ActionHelp"},{"l":"All Classes","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"Backend"},{"p":"<Unnamed>","l":"ClearHelp"},{"p":"<Unnamed>","l":"Currency"},{"p":"<Unnamed>","l":"GUI"},{"p":"<Unnamed>","l":"JCurrencyField"},{"p":"<Unnamed>","l":"MConvert"}];updateSearchResults();
