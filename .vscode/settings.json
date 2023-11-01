@@ -1,6 +1,10 @@
 {
-    "files.exclude": {
-        "**/*.class": true,
-        "**/*.jar": true
-    }
+  "files.exclude": {
+    "**/*.class": true,
+    "**/*.jar": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none"
 }

@@ -5,8 +5,10 @@ import javax.swing.SwingConstants;
 
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.Insets;
 import java.util.ArrayList;
+
+import java.awt.Toolkit;
+import java.awt.Image;
 
 /**
  * GUI
@@ -24,16 +26,21 @@ public class GUI {
     private JButton convertButton;
     private JButton clearButton;
 
+    private Image icon;
+
     private ArrayList<JCurrencyField> currencyFields;
 
     private int fieldRows = 2;
     private int fieldCols = 2;
 
     /**
-     * Gets the contents of all currency fields and returns it as an ArrayList of doubles
-     * @return an ArrayList of parsed Doubles equal to what's inside the currency fields
+     * Gets the contents of all currency fields and returns it as an ArrayList of
+     * doubles
+     * 
+     * @return an ArrayList of parsed Doubles equal to what's inside the currency
+     *         fields
      */
-    public ArrayList<Double> GetContents(){
+    public ArrayList<Double> GetContents() {
         ArrayList<Double> contents = new ArrayList<Double>();
         for (JCurrencyField currencyField : currencyFields) {
             contents.add(currencyField.Get());
@@ -42,7 +49,9 @@ public class GUI {
     }
 
     /**
-     * Sets the contents of the currency text fields to be an ArrayList of a given amount
+     * Sets the contents of the currency text fields to be an ArrayList of a given
+     * amount
+     * 
      * @param amount the arraylist to set the contents of the currency fields to
      */
     public void SetContents(ArrayList<Double> amount) {
@@ -54,7 +63,7 @@ public class GUI {
     /**
      * Resets all text fields to hold their currency titles
      */
-    public void ResetContents(){
+    public void ResetContents() {
         for (JCurrencyField field : currencyFields) {
             field.ResetTitle();
         }
@@ -65,9 +74,9 @@ public class GUI {
     /**
      * The main constructor for the class
      * 
-     * @param width  the width of the window
-     * @param height the height of the window
-     * @param backend  the backend to attach this gui to
+     * @param width   the width of the window
+     * @param height  the height of the window
+     * @param backend the backend to attach this gui to
      */
     public GUI(int width, int height, Backend backend) {
 
@@ -75,6 +84,8 @@ public class GUI {
 
         frame = new JFrame("MConvert");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        icon = Toolkit.getDefaultToolkit().getImage("Resources/money.png");
+        frame.setIconImage(icon);
         frame.setSize(width, height);
         frame.setResizable(false);
 
